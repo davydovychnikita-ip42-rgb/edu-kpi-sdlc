@@ -1,0 +1,11 @@
+.footer {
+  padding: var(--container-padding);
+  width: 100%;
+  background-color: black;
+  color: white;
+  justify-self: flex-end;
+}
+
+.wrapper {
+  margin: var(--container-margin);
+}
