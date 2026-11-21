@@ -1,0 +1,8 @@
+.main {
+  min-height: 60rem;
+  height: 100vh;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
