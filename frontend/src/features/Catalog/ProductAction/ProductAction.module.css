@@ -1,0 +1,6 @@
+.wrapper {
+  margin-top: var(--container-padding);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

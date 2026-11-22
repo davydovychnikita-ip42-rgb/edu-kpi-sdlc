@@ -1,10 +1,15 @@
 import Product from '../../components/Product/Product';
 import styles from './Catalog.module.css';
 import searchIcon from '../../assets/search-icon.png';
-import { useAppSelector } from '../../app/hooks';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { addProduct } from '../Cart/cartSlice';
+import ProductAction from './ProductAction/ProductAction';
 
 function Catalog () {
   const products = useAppSelector((state) => state.catalog.products);
+  const cart = useAppSelector((state) => state.cart.cartItems);
+  
+  const dispatch = useAppDispatch();
 
   return (
     <main className={styles.main}>
@@ -25,6 +30,13 @@ function Catalog () {
                 <div className={styles.productWrapper}>
                   <Product 
                     product={product}
+                    additional={
+                      <ProductAction
+                        handleAddToCart={() => {dispatch(addProduct({ product: product, quantity: 1 }))}}
+                        isInCart={cart[product.id] !== undefined}
+                        isEnoughAtStock={product.stockQuantity > 0}
+                      />
+                    }
                     key={product.id}
                   />
                 </div>

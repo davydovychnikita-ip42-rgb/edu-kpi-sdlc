@@ -1,0 +1,64 @@
+.main {
+  background-color: var(--background-color-primary);
+  min-height: 100vh;
+  width: 100rem;
+  max-width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  position: relative;
+}
+
+.cart {
+  padding: 0 var(--container-padding);
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.toolbarWrapper {
+  position: sticky;
+  top: calc(var(--header-height));
+  background-color: var(--background-color-primary);
+  z-index: 900;
+}
+.toolbar {
+  background-color: var(--background-color-secondary);
+  border: var(--border);
+  border-radius: var(--border-radius);
+
+  margin-top: var(--container-padding);
+  padding: var(--container-padding);
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  text-align: center;
+}
+.makeOrderWrapper {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.total {
+  margin-right: var(--container-padding);
+  text-decoration: underline;
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+.makeOrderWrapper button {
+  font-size: 1.6rem;
+}
+
+.itemWrapper {
+  width: 33%;
+  padding: var(--container-padding);
+}

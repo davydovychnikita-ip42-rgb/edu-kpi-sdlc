@@ -3,9 +3,10 @@ import styles from './Product.module.css';
 
 interface ProductProps {
   product: ProductType,
+  additional?: React.ReactElement | null,
 }
 
-function Product ({ product }: ProductProps) {
+function Product ({ product, additional = null }: ProductProps) {
   return (
     <div className={styles.container}>
       <h2>{product.title}</h2>
@@ -17,6 +18,7 @@ function Product ({ product }: ProductProps) {
         </div>
         <div className={styles.status}>{product.status}</div>
       </div>
+      {additional}
     </div>
   );
 }
