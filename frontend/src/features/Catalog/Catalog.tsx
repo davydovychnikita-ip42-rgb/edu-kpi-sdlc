@@ -1,16 +1,22 @@
 import Product from '../../components/Product/Product';
 import styles from './Catalog.module.css';
+import searchIcon from '../../assets/search-icon.png';
 
 function Catalog () {
   return (
     <main className={styles.main}>
       <div className={styles.toolbarWrapper}>
         <div className={styles.toolbar}>
-          Here will be Search
+        <h2 className={styles.title}>Каталог</h2>
+        <div className={styles.searchWrapper} onClick={() => {document.getElementById('search')?.focus()}}>
+          <label htmlFor='search'>
+            <img className={styles.searchIcon} src={searchIcon} alt='' />
+          </label>
+          <input id='search' type='text' placeholder='Пошук'></input>
+        </div>
         </div>
       </div>
       <div className={styles.catalog}>
-        <h2>Catalog</h2>
         <div className={styles.productWrapper}>
           <Product
             id='1'
