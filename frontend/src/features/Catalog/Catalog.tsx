@@ -34,6 +34,7 @@ function Catalog () {
                       <ProductAction
                         handleAddToCart={() => {dispatch(addProduct({ product: product, quantity: 1 }))}}
                         isInCart={cart[product.id] !== undefined}
+                        isEnoughAtStock={product.stockQuantity > 0}
                       />
                     }
                     key={product.id}

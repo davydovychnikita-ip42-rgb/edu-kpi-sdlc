@@ -20,10 +20,42 @@
   align-items: center;
 }
 
+.toolbarWrapper {
+  position: sticky;
+  top: calc(var(--header-height));
+  background-color: var(--background-color-primary);
+  z-index: 900;
+}
+.toolbar {
+  background-color: var(--background-color-secondary);
+  border: var(--border);
+  border-radius: var(--border-radius);
+
+  margin-top: var(--container-padding);
+  padding: var(--container-padding);
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
 .title {
-  order: 1;
   text-align: center;
-  margin-right: var(--container-margin);
+}
+.makeOrderWrapper {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.total {
+  margin-right: var(--container-padding);
+  text-decoration: underline;
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+.makeOrderWrapper button {
+  font-size: 1.6rem;
 }
 
 .itemWrapper {

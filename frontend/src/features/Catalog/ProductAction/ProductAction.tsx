@@ -3,15 +3,20 @@ import styles from './ProductAction.module.css';
 interface ProductActionProps {
   handleAddToCart: () => void,
   isInCart: boolean,
+  isEnoughAtStock: boolean,
 }
 
-function ProductAction ({ handleAddToCart, isInCart }: ProductActionProps) {
+function ProductAction ({ handleAddToCart, isInCart, isEnoughAtStock }: ProductActionProps) {  
   return (
     <div className={styles.wrapper}>
-      {isInCart ? (
-        <button disabled>В кошику</button>
+      {!isEnoughAtStock ? (
+        <button disabled>Нема в наявності</button>
       ) : (
-        <button onClick={handleAddToCart}>Додати до кошика</button>
+        isInCart ? (
+          <button disabled>В кошику</button>
+        ) : (
+          <button onClick={handleAddToCart}>Додати до кошика</button>
+        )
       )}
     </div>
   );

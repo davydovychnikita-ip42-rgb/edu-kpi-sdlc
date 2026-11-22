@@ -5,7 +5,7 @@ interface CartItemQuantityProps {
   initialQuantity: number,
   handleChangeQuantity: (newQuantity: number) => void,
   handleRemoveFromCart: () => void,
-  maxQuantity?: number,
+  maxQuantity: number,
 }
 
 function CartItemQuantity({ initialQuantity, handleChangeQuantity, handleRemoveFromCart, maxQuantity }: CartItemQuantityProps) {
@@ -48,10 +48,18 @@ function CartItemQuantity({ initialQuantity, handleChangeQuantity, handleRemoveF
     <div className={styles.wrapper}>
       <div className={styles.quantityWrapper}>
         <button onClick={handleDecrement} disabled={!isDecreaseAllowed}>-</button>
-        <input type='number' value={quantity} onChange={handleSet}></input>
+        <input
+          type='number'
+          value={quantity}
+          onChange={handleSet}
+          min={1}
+          max={maxQuantity}
+          required
+          onFocus={(event) => {event.target.select()}}
+        ></input>
         <button onClick={handleIncrement} disabled={!isIncreaseAllowed}>+</button>
       </div>
-      <button onClick={handleRemoveFromCart}>Вилучити з кошика</button>
+      <button className={styles.removeFromCart} onClick={handleRemoveFromCart}>Вилучити з кошика</button>
     </div>
   );
 }

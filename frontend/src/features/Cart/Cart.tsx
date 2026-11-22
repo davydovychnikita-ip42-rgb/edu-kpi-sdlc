@@ -7,12 +7,23 @@ import { removeProduct, setProductQuantity } from './cartSlice';
 function Cart () {
   const cartIndices = useAppSelector((state) => state.cart.cartItemsId);
   const cart = useAppSelector((state) => state.cart.cartItems);
+  const total = useAppSelector((state) => state.cart.total);
 
   const dispatch = useAppDispatch();
 
   return (
     <main className={styles.main}>
-      <h2 className={styles.title}>Кошик</h2>
+      <div className={styles.toolbarWrapper}>
+        <div className={styles.toolbar}>
+        <h2 className={styles.title}>Кошик</h2>
+        <div className={styles.makeOrderWrapper}>
+          {total !== 0 &&
+            <p className={styles.total}>Загальна вартість: {total}</p>
+          }
+          <button disabled={total === 0}>Оформити замовлення</button>
+        </div>
+        </div>
+      </div>
       <div className={styles.cart}>
             {cartIndices.map((index) => {
               return (
