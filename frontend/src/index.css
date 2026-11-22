@@ -5,6 +5,7 @@
   --background-color-primary: white;
   --background-color-secondary: rgb(220, 220, 220);
   --background-color-selected: rgb(220, 245, 220);
+  --background-color-product: rgb(250, 250, 250);
   --container-margin: 4rem;
   --container-padding: 1rem;
   --container-shadow: 0.3rem 0.3rem 0.6rem rgb(0 0 0 / 0.3);

@@ -15,6 +15,7 @@
   position: sticky;
   top: calc(var(--header-height));
   background-color: var(--background-color-primary);
+  z-index: 900;
 }
 
 .toolbar {
@@ -28,4 +29,9 @@
 
 .catalog {
   padding: 0 var(--container-padding);
+}
+
+.productWrapper {
+  width: 25%;
+  margin: var(--container-padding);
 }
