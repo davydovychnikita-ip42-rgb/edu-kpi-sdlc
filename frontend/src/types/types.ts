@@ -8,3 +8,8 @@ export type ProductType = {
   status: string, // create ProductStatus type
   createdAt: EpochTimeStamp,
 }
+
+export type CartItem = {
+  product: ProductType,
+  quantity: number,
+}

@@ -54,3 +54,6 @@ button {
 button:hover {
   background-color: var(--background-color-selected);
 }
+button:disabled {
+  pointer-events: none;
+}
