@@ -12,48 +12,42 @@
 }
 .container h2 {
   text-align: center;
+  text-wrap-mode: wrap;
 }
 .container p {
   margin: var(--container-padding) 0;
   padding-bottom: calc(2 * var(--container-padding));
 
   text-align: center;
-  max-height: 20rem;
+  max-height: 10rem;
   overflow: hidden;
 }
 .info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: var(--container-padding) 0;
-  z-index: 850;
-  border-bottom-left-radius: var(--border-radius);
-  border-bottom-right-radius: var(--border-radius);
-
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
 }
+
+.numbersWrapper {
+  flex: 50%;
+  display: flex;
+  flex-flow: column nowrap;
+}
 .price {
-  flex: 25%;
   order: 1;
-  text-align: center;
   text-wrap-mode: wrap;
 }
 
 .quantity {
-  flex: 25%;
-  order: 3;
-  text-align: center;
+  order: 2;
   font-size: 1.2rem;
   text-wrap-mode: wrap;
 }
 
 .status {
   flex: 50%;
-  order: 2;
+  order: 3;
   padding: 0 var(--container-padding);
   text-align: center;
   text-decoration: underline;

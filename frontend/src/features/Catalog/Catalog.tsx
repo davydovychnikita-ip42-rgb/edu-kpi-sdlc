@@ -1,8 +1,11 @@
 import Product from '../../components/Product/Product';
 import styles from './Catalog.module.css';
 import searchIcon from '../../assets/search-icon.png';
+import { useAppSelector } from '../../app/hooks';
 
 function Catalog () {
+  const products = useAppSelector((state) => state.catalog.products);
+
   return (
     <main className={styles.main}>
       <div className={styles.toolbarWrapper}>
@@ -17,19 +20,16 @@ function Catalog () {
         </div>
       </div>
       <div className={styles.catalog}>
-        <div className={styles.productWrapper}>
-          <Product
-            id='1'
-            ownerId='1'
-            title='Product Example'
-            description='Example prodcut lorem ipsum doloers blablabla'
-            price={200}
-            stockQuantity={22}
-            status='В наявності'
-            createdAt={Date.UTC(2026, 11, 22, 12, 30)}
-            key={'1'}
-          />
-        </div>
+            {products.map((product) => {
+              return (
+                <div className={styles.productWrapper}>
+                  <Product 
+                    product={product}
+                    key={product.id}
+                  />
+                </div>
+              );
+            })}
       </div>
     </main>
   );
