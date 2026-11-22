@@ -1,14 +1,18 @@
 import stylesAuth from '../Auth.module.css';
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router";
+import { useAppDispatch } from '../../../app/hooks';
+import { login } from '../authSlice';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const handleLogin = () => {
+    dispatch(login());
     navigate('/');
   }
 

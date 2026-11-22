@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import stylesAuth from '../Auth.module.css';
 import { Link, useNavigate } from 'react-router';
+import { useAppDispatch } from '../../../app/hooks';
+import { login } from '../authSlice';
 
 function Register () {
   const [name, setName] = useState('');
@@ -10,12 +12,14 @@ function Register () {
   const [password, setPassword] = useState('');
   const [passwordRepeat, setPasswordRepeat] = useState('');
 
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const handleRegister = () => {
     if (password !== passwordRepeat) {
       return;
     }
+    dispatch(login());
     navigate('/');
   }
 
