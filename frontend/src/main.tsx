@@ -8,6 +8,9 @@ import { store } from './app/store.ts';
 import Catalog from './features/Catalog/Catalog.tsx';
 import Cart from './features/Cart/Cart.tsx';
 import Profile from './features/Profile/Profile.tsx';
+import Layout from './features/Auth/Layout.tsx';
+import Register from './features/Auth/Register/Register.tsx';
+import Login from './features/Auth/Login/Login.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -18,7 +21,11 @@ createRoot(document.getElementById('root')!).render(
             <Route index element={<Catalog />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/profile' element={<Profile />} />
-          </Route>            
+          </Route>
+          <Route element={<Layout />}>
+            <Route path='register' element={<Register />} />
+            <Route path='login' element={<Login />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </Provider>

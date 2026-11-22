@@ -1,12 +1,17 @@
 :root {
   --color-primary: black;
+  --color-secondary: rgb(15, 120, 15);
+  --color-selected: rgb(0, 200, 0);
   --background-color-primary: white;
   --background-color-secondary: rgb(220, 220, 220);
+  --background-color-selected: rgb(220, 245, 220);
   --container-margin: 4rem;
   --container-padding: 1rem;
+  --container-shadow: 0.3rem 0.3rem 0.6rem rgb(0 0 0 / 0.3);
   --header-height: 6rem;
   --border: 1px solid black;
   --border-radius: 1rem;
+  --transition-time: 0.1s;
 }
 
 *, *::before, *::after {
@@ -27,4 +32,24 @@ main {
   width: 100rem;
   max-width: 100%;
   margin: 0 auto;
+}
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color linear var(--transition-time);
+}
+a:hover, a.active {
+  color: var(--color-selected);
+}
+
+button {
+  padding: var(--container-padding) calc(2 * var(--container-padding));
+  border: var(--border);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 2rem;
+  transition: background-color linear var(--transition-time);
+}
+button:hover {
+  background-color: var(--background-color-selected);
 }
