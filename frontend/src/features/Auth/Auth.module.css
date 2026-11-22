@@ -1,0 +1,45 @@
+.inputWrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  
+  width: 100%;
+  border-bottom: var(--border);
+  padding-bottom: var(--container-padding);
+  margin-bottom: var(--container-padding);
+}
+.inputWrapper:first-child {
+  padding-top: var(--container-padding);
+  border-top: var(--border);
+}
+.inputWrapper input {
+  margin-left: var(--container-margin);
+}
+
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  background-color: var(--background-color-secondary);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  width: 80%;
+
+  margin: var(--container-padding);
+  box-shadow: var(--container-shadow);
+}
+
+.form h1 {
+  margin: var(--container-padding);
+}
+
+.actionWrapper {
+  margin: var(--container-padding) 0;
+}
+
+.otherWrapper {
+  margin-bottom: var(--container-padding);
+}

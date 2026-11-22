@@ -1,12 +1,14 @@
-import { NavLink } from 'react-router';
+import { NavLink, useNavigate } from 'react-router';
 import styles from './Header.module.css';
 
 function Header() {
+  const navigate = useNavigate();
+
   return (
     <header className={styles.header}>
-      <NavLink to='/' className={styles.logoWrapper}>
+      <div className={styles.logoWrapper} onClick={() => {navigate('/')}}>
         <h1 className={styles.logo}>Свій до свого</h1>
-      </NavLink>
+      </div>
       <div className={styles.optionsWrapper}>
         <NavLink to='/' className={styles.catalogWrapper}>
             <p>Каталог</p>
